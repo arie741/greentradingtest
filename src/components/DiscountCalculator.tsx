@@ -11,20 +11,23 @@ const DiscountCalculator: FC = () => {
 
   return (
     <div>
-      {[1, 2, 3, 4, 5].map((item, index) => (
-        <div
-          className="shirt-item"
-          key={index}
-          onClick={() => handleOnClick(item)}
-          data-testid={`shirt-${item}`}
-        >
-          <Shirt shirtType={item} />
-        </div>
-      ))}
+      <h3>Shop</h3>
+      <div className="shop-container">
+        {[1, 2, 3, 4, 5].map((item, index) => (
+          <div
+            className="shirt-item"
+            key={index}
+            onClick={() => handleOnClick(item)}
+            data-testid={`shirt-${item}`}
+          >
+            <Shirt shirtType={item} />
+          </div>
+        ))}
+      </div>
       <h4>Cart</h4>
-      <div>
+      <div className="cart-container">
         {selected.map((shirt, index) => (
-          <div key={index}>
+          <div className="shirt-item" key={index}>
             <Shirt shirtType={shirt} />
           </div>
         ))}
