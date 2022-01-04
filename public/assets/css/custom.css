@@ -1,0 +1,6 @@
+.shirt-item {
+    cursor: pointer;
+    border: 1px solid #333333;
+    padding: 4px;
+    margin: 4px
+}
