@@ -33,7 +33,7 @@ const DiscountCalculator: FC = () => {
         ))}
       </div>
       <h3>Total Price</h3>
-      <div data-testid="result">{calculateDiscount(selected)}</div>
+      <div data-testid="result">{calculateDiscount(selected).toFixed(2)}</div>
     </div>
   );
 };

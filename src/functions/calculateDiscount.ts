@@ -14,7 +14,7 @@ const calculateDiscount = (cart: number[]): number => {
   let totalPrice: number = 0;
 
   let currentCart: number[] = cart;
-  if (currentCart.length >= 8) {//If cart lengths has more than 8 items, it will prioritize combo 4 checks.
+  if (currentCart.length % 8 === 0) {//If cart lengths has more than 8 items, it will prioritize combo 4 checks.
     while (uniqueArray<number>(currentCart).length >= 4) {
       //Checks whether or not the cart has 4 combos
       if (checkCombo(4, currentCart)) {

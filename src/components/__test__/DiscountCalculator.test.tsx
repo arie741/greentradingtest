@@ -21,20 +21,20 @@ beforeEach(() => {
 });
 
 test("Test initial values", () => {
-  expect(resultEl.textContent).toBe("0");
+  expect(resultEl.textContent).toBe("0.00");
 });
 
 test("Fire event: Input 1 first shirt, 1 second shirt", () => {
   fireEvent.click(shirtOneEl);
   fireEvent.click(shirtTwoEl);
-  expect(resultEl.textContent).toBe("15.2");
+  expect(resultEl.textContent).toBe("15.20");
 });
 
 test("Fire event: Input 1 first shirt, 1 second shirt, 1 third shirt", () => {
   fireEvent.click(shirtOneEl);
   fireEvent.click(shirtTwoEl);
   fireEvent.click(shirtThreeEl);
-  expect(resultEl.textContent).toBe("21.6");
+  expect(resultEl.textContent).toBe("21.60");
 });
 
 test("Fire event: Input 1 first shirt, 1 second shirt, 1 third shirt, 1 fourth shirt", () => {
@@ -42,7 +42,7 @@ test("Fire event: Input 1 first shirt, 1 second shirt, 1 third shirt, 1 fourth s
   fireEvent.click(shirtTwoEl);
   fireEvent.click(shirtThreeEl);
   fireEvent.click(shirtFourEl);
-  expect(resultEl.textContent).toBe("25.6");
+  expect(resultEl.textContent).toBe("25.60");
 });
 
 test("Fire event: Input 1 first shirt, 1 second shirt, 1 third shirt, 1 fourth shirt, 1 five shirt", () => {
@@ -51,7 +51,7 @@ test("Fire event: Input 1 first shirt, 1 second shirt, 1 third shirt, 1 fourth s
   fireEvent.click(shirtThreeEl);
   fireEvent.click(shirtFourEl);
   fireEvent.click(shirtFiveEl);
-  expect(resultEl.textContent).toBe("30");
+  expect(resultEl.textContent).toBe("30.00");
 });
 
 test("Fire event: Input 2 first shirt, 2 second shirt, 2 third shirt, 1 fourth shirt, 1 fifth shirt", () => {
@@ -63,5 +63,19 @@ test("Fire event: Input 2 first shirt, 2 second shirt, 2 third shirt, 1 fourth s
   fireEvent.click(shirtThreeEl);
   fireEvent.click(shirtFourEl);
   fireEvent.click(shirtFiveEl);
-  expect(resultEl.textContent).toBe("51.2");
+  expect(resultEl.textContent).toBe("51.20");
 });
+
+test("Fire event: Input 2 first shirt, 2 second shirt, 2 third shirt, 2 fourth shirt, 1 fifth shirt", () => {
+    fireEvent.click(shirtOneEl);
+    fireEvent.click(shirtOneEl);
+    fireEvent.click(shirtTwoEl);
+    fireEvent.click(shirtTwoEl);
+    fireEvent.click(shirtThreeEl);
+    fireEvent.click(shirtThreeEl);
+    fireEvent.click(shirtFourEl);
+    fireEvent.click(shirtFourEl);
+    fireEvent.click(shirtFiveEl);
+    expect(resultEl.textContent).toBe("55.60");
+  });
+  
